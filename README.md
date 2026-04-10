@@ -12,13 +12,21 @@ agent-research/
 
 ## 使用方式
 
-1. 在 `sources/` 下 clone 目標專案
-2. 在 `notes/` 下建立同名目錄，記錄該專案的筆記
+`sources/` 下的專案以 **git submodule** 管理，可追蹤上游原始提交記錄。
 
 ```bash
-# 範例：新增一個專案
-git clone https://github.com/<org>/<repo> sources/<repo>
-mkdir notes/<repo>
+# 新增專案（加入 submodule）
+git submodule add https://github.com/<org>/<repo> sources/<repo>
+mkdir -p notes/<repo>
+
+# clone 本 repo 時一併初始化所有 submodule
+git clone --recurse-submodules <this-repo-url>
+
+# 已 clone 但尚未初始化 submodule
+git submodule update --init --recursive
+
+# 更新所有 submodule 至上游最新
+git submodule update --remote --merge
 ```
 
 ## 筆記結構建議
@@ -34,4 +42,4 @@ mkdir notes/<repo>
 
 | 專案 | 來源 | 重點 |
 |------|------|------|
-| *(待新增)* | | |
+| [openclaw](notes/openclaw/README.md) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | Local-first 個人 AI 助理；Gateway control plane；multi-channel；skills platform |

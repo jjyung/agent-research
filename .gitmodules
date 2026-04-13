@@ -4,3 +4,12 @@
 [submodule "sources/opencode"]
 	path = sources/opencode
 	url = https://github.com/anomalyco/opencode.git
+[submodule "sources/gemini-cli"]
+	path = sources/gemini-cli
+	url = https://github.com/google-gemini/gemini-cli
+[submodule "sources/codex"]
+	path = sources/codex
+	url = https://github.com/openai/codex
+[submodule "sources/open-claude-code"]
+	path = sources/open-claude-code
+	url = https://github.com/OtisChin/open-claude-code
